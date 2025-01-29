@@ -3,6 +3,7 @@ if(ENABLE_TESTING)
 
     # Define test sources
     set(TEST_SOURCES
+        tests/test.cpp
         tests/test1.cpp
         tests/test2.cpp
     )
