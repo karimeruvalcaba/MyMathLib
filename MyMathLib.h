@@ -1,5 +1,7 @@
 #include <math.h>
 #include <stdexcept>
+#ifndef MYMATHLIB_H
+#define MYMATHLIB_H
 
 double mySqrt(double x)
 {
@@ -9,3 +11,5 @@ double mySqrt(double x)
 	}
 	return sqrt(x);
 }
+
+#endif // MYMATHLIB_H
