@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(SOURCES
         tests/test1.cpp
         tests/test2.cpp
-        test/test.cpp
+        tests/test.cpp
         ../main.cpp
 )
 
