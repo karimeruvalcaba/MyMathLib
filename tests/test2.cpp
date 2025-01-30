@@ -8,7 +8,7 @@ TEST(KarimeMathLib2Test, FactorialTest)
     ASSERT_EQ(mathLib2.my_factorial(5), 120);
 }
 
-
+// NOSONAR: This is a Google Test macro, which does not follow the lowercase naming rule
 TEST(KarimeMathLib2Test, CombinationTest)
 {
     KarimeMathLib2 mathLib2;
