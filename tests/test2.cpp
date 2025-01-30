@@ -15,7 +15,7 @@ TEST(KarimeMathLib2Test, CombinationTest)
     ASSERT_EQ(mathLib2.my_combination(5, 2), 10);
 }
 
-// NOSONAR: GTest macros do not follow lowercase naming convention
+
 TEST(KarimeMathLib2Test, FactorialNegative)
 {
     KarimeMathLib2 mathLib2;
