@@ -4,9 +4,8 @@ project(unit_test)
 set(CMAKE_CXX_STANDARD 17)
 
 set(SOURCES
-        tests/test1.cpp
-        tests/test2.cpp
-        tests/test.cpp
+        ../KarimeMathLib.h
+        ../KarimeMathLib2.h
         ../main.cpp
 )
 
