@@ -8,7 +8,7 @@ TEST(KarimeMathLib2Test, FactorialTest)
     ASSERT_EQ(mathLib2.my_factorial(5), 120);
 }
 
-
+@SuppressWarnings("java:S101")
 TEST(KarimeMathLib2Test, CombinationTest)
 {
     KarimeMathLib2 mathLib2;
