@@ -6,23 +6,17 @@ on:
       - main
 
 jobs:
-  build_and_test:
-    name: Build, Analyze, and Run Tests
+  tests:
+    name: Run Unit Tests
     runs-on: ubuntu-latest
-
     steps:
-      # 1. Clone the repository
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # Required for better relevancy of analysis
 
-      # 2. Install dependencies
       - name: Install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y cmake build-essential
 
-      # 3. Configure, Build, and Run Tests
       - name: Configure, Build, and Test
         run: |
           mkdir build
@@ -31,15 +25,22 @@ jobs:
           cmake --build .
           ctest --output-on-failure
 
-      # 4. Run SonarQube Analysis
-      - name: SonarQube Analysis
+  build_analysis:
+    name: Build and Analyze
+    runs-on: ubuntu-latest
+    needs: tests  # Ensures tests run first before analysis
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Required for better analysis
+
+      - name: Run SonarQube Analysis
         uses: sonarsource/sonarqube-scan-action@v3
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
 
-      # 5. Optionally enforce Quality Gate
-      # Uncomment this section if you want the build to fail if the Quality Gate is red
+      # Optional: Enforce Quality Gate
       # - name: SonarQube Quality Gate Check
       #   uses: sonarsource/sonarqube-quality-gate-action@master
       #   timeout-minutes: 5
