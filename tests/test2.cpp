@@ -10,7 +10,7 @@ TEST(KarimeMathLib2Test, FactorialTest)
 TEST(KarimeMathLib2Test, CombinationTest)
 {
     KarimeMathLib2 mathLib2;
-    ASSERT_EQ(mathLib2.combination(5, 2), 10);
+    ASSERT_EQ(mathLib2.my_combination(5, 2), 10);
 }
 
 TEST(KarimeMathLib2Test, FactorialNegative)
@@ -22,5 +22,5 @@ TEST(KarimeMathLib2Test, FactorialNegative)
 TEST(KarimeMathLib2Test, CombinationInvalid)
 {
     KarimeMathLib2 mathLib2;
-    ASSERT_THROW(mathLib2.combination(3, 5), invalid_argument);
+    ASSERT_THROW(mathLib2.my_combination(3, 5), invalid_argument);
 }
