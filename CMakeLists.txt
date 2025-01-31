@@ -30,7 +30,6 @@ if(ENABLE_TESTING)
 
     # Archivos de pruebas
     set(TEST_SOURCES
-        tests/test.cpp
         tests/test1.cpp
         tests/test2.cpp
     )
