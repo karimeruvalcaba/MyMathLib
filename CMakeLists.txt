@@ -30,19 +30,20 @@ FetchContent_MakeAvailable(googletest)
 if(ENABLE_TESTING)
     enable_testing()
 
-    # Test 1: 
+    # Add the test cases
     add_executable(MathTestCase tests/test.cpp)
-    target_link_libraries(test_edmonds_karp PRIVATE gtest gtest_main)
-    add_test(NAME TestEdmondsKarp COMMAND test_edmonds_karp)
+    target_link_libraries(MathTestCase PRIVATE gtest gtest_main)
+    target_include_directories(MathTestCase PRIVATE ${CMAKE_SOURCE_DIR})
+    add_test(NAME TestMath COMMAND MathTestCase)
 
-    # Test 2:
     add_executable(KarimeMathLibTest tests/test1.cpp)
-    target_link_libraries(test_kruskal PRIVATE gtest gtest_main)
-    add_test(NAME TestKruskal COMMAND test_kruskal)
+    target_link_libraries(KarimeMathLibTest PRIVATE gtest gtest_main)
+    target_include_directories(KarimeMathLibTest PRIVATE ${CMAKE_SOURCE_DIR})
+    add_test(NAME TestKarimeMathLib COMMAND KarimeMathLibTest)
 
-    # Test 3:
-    add_executable(KarimeMathLib2 tests/test2.cpp)
-    target_link_libraries(test_kruskal PRIVATE gtest gtest_main)
-    add_test(NAME TestKruskal COMMAND test_kruskal)    
+    add_executable(KarimeMathLib2Test tests/test2.cpp)
+    target_link_libraries(KarimeMathLib2Test PRIVATE gtest gtest_main)
+    target_include_directories(KarimeMathLib2Test PRIVATE ${CMAKE_SOURCE_DIR})
+    add_test(NAME TestKarimeMathLib2 COMMAND KarimeMathLib2Test)
+
 endif()
-
